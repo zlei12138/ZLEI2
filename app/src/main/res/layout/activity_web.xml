@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zl.zlei.View.activi.WebActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarInweb"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:isScrollContainer="true"
+            app:navigationIcon="@drawable/searchactivity_back_white_36dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tool_srctext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="xxxx" />
+
+                <ImageButton
+                    android:id="@+id/setting_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="12dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/web_menu" />
+
+                <ImageButton
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:id="@+id/shares_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="10dp"
+                    android:layout_toStartOf="@+id/setting_button"
+                    android:src="@drawable/web_share" />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_web" />
+
+    <TextView
+        android:id="@+id/fab_mengban"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/web_mengban_bg"
+        android:visibility="invisible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/floatingParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="45dp"
+                android:layout_marginStart="15dp"
+                app:menu_colorNormal="@color/colorAccent"
+                app:menu_colorPressed="@color/colorAccentDark"
+                app:menu_icon="@drawable/web_float_add"
+                app:menu_labels_ellipsize="end"
+                app:menu_labels_singleLine="true"
+                fab:menu_labels_position="right"
+                app:menu_labels_colorNormal="#00ffffff"
+                app:menu_labels_showShadow="false"
+                app:menu_labels_colorPressed="#00ffffff"
+                app:menu_labels_colorRipple="#00ffffff"
+                fab:menu_openDirection="up">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_flush"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/web_white_refresh"
+                    app:fab_colorNormal="@color/colorAccent"
+                    app:fab_colorPressed="@color/colorAccentDark"
+                    app:fab_label="刷新"
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/web_star_border_white_24dp"
+                    app:fab_colorNormal="@color/colorAccent"
+                    app:fab_colorPressed="@color/colorAccentDark"
+                    app:fab_label="收藏"
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/web_fab_share"
+                    app:fab_colorNormal="@color/colorAccent"
+                    app:fab_colorPressed="@color/colorAccentDark"
+                    app:fab_label="分享"
+                    app:fab_size="mini" />
+            </com.github.clans.fab.FloatingActionMenu>
+        </RelativeLayout>
+
+        <RelativeLayout
+           android:layout_alignParentBottom="true"
+            android:id="@+id/settingView"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/settingView_bg"
+            >
+
+            <LinearLayout
+                android:id="@+id/ziti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/web_text_bg"
+                    android:id="@+id/Font_minus"
+                    android:clickable="true"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:text="A-"
+                    android:textSize="20sp" />
+
+                <SeekBar
+                    android:progress="50"
+                    android:id="@+id/Font_seekBar"
+                    android:max="100"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textColor="@color/web_text_bg"
+                    android:id="@+id/Font_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="5dp"
+                    android:text="A+"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:checked="true"
+                    android:id="@+id/Font_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="10dp"
+                    android:text="默认"
+                    android:textColor="@color/web_text_bg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/liangdu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ziti"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/light_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:src="@drawable/ic_wb_sunny_black_18dp"
+                    android:textSize="20sp" />
+
+                <SeekBar
+                    android:progress="50"
+                    android:max="100"
+                    android:id="@+id/light_seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/light_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:paddingEnd="5dp"
+                    android:src="@drawable/ic_wb_sunny_black_24dp"
+                    android:textSize="20sp" />
+
+
+                <CheckBox
+                    android:id="@+id/light_default"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="10dp"
+                    android:text="系统"
+                    android:textColor="@color/web_text_bg" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/main_tool_text" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:id="@+id/isHaveImageButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/web_have_image"
+                    android:gravity="center"
+                    android:text="有图模式" />
+
+                <RadioButton
+                    android:textColor="@color/web_text_bg"
+                    android:id="@+id/fresh"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/web_refresh"
+                    android:gravity="center"
+                    android:text="刷新" />
+
+                <RadioButton
+                    android:id="@+id/rotate"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/web_current_portrait"
+                    android:gravity="center"
+                    android:text="转屏" />
+            </RadioGroup>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
